@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div>
-    <span>index page</span>
-  </div>
+  <span className="text-blue-400">index page</span>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
 </template>
