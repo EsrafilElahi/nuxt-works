@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <span>works page</span>
+    <span>works page 2</span>
   </div>
 </template>
