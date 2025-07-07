@@ -21,7 +21,7 @@ const handleBack = () => {
         }}</h2>
     </header>
 
-    <main class="w-full h-full bg-[#B3B7EE] px-2 py-5">
+    <main class="w-full h-full bg-[#c5c8f4] px-2 py-5">
       <slot />
     </main>
   </div>
