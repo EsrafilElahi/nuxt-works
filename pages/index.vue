@@ -11,6 +11,6 @@ definePageMeta({
 <template>
   <MainLayout title="Add Task">
     <span class="text-blue-400">index page</span>
-
+    <AddWorkPlusIcon />
   </MainLayout>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center flex-col min-w-[500px] max-w-[500px] w-full mx-auto">
+  <div class="min-h-screen flex items-center flex-col min-w-[500px] max-w-[500px] w-full mx-auto relative">
     <header class="w-full !flex justify-between items-center bg-[#9395D3] !p-4">
       <h2 class="!text-[20px] !font-bold text-white" v-uppercase>works app</h2>
 

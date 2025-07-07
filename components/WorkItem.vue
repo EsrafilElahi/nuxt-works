@@ -8,7 +8,7 @@ const props = defineProps(['work']);
   <div
     class="flex justify-between items-center gap-10 !px-4 !border !border-gray-300 !py-2 rounded-lg shadow-xl bg-white">
     <div>
-      <h5 class="!text-[25px] !font-bold text-[#9395D3]">{{ work?.title }}</h5>
+      <h5 class="!text-[23px] !font-bold text-[#9395D3]" v-uppercase>{{ work?.title }}</h5>
       <span class="!text-[15px] mt-1">{{ work?.subTitle }}</span>
     </div>
 
