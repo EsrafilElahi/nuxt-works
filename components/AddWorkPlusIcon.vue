@@ -3,7 +3,7 @@
 const router = useRouter();
 
 const redirectToAddWorkPage = () => {
-  router.push('/works');
+  router.push('/addWork');
 }
 
 </script>

@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import MainLayout from '~/layouts/MainLayout.vue';
+import ActionLayout from '~/layouts/ActionLayout.vue';
 
-
-definePageMeta({
-  layout: "main-layout",
-});
 
 const works = ref([
   {
     id: 1,
-    title: 'title 1',
+    title: 'add work title 1',
     subTitle: 'subTitle 1',
     completed: false,
   },
@@ -36,11 +32,11 @@ const works = ref([
 </script>
 
 <template>
-  <MainLayout>
-    <div class="flex flex-col gap-5">
-      <WorkItem v-for="work in works" :work="work" :key="work.id" />
+  <ActionLayout title="Add Work">
+    <div>
+      <div class="flex flex-col gap-5">
+        <WorkItem v-for="work in works" :work="work" :key="work.id" />
+      </div>
     </div>
-
-    <AddWorkPlusIcon />
-  </MainLayout>
+  </ActionLayout>
 </template>
