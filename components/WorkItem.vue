@@ -13,9 +13,11 @@ const props = defineProps(['work']);
     </div>
 
     <div class="flex justify-between items-center gap-5">
-      <Icon name="material-symbols:edit-outline" size="20" style="color: #B3B7EE; cursor: pointer;" @click="" />
-      <Icon name="material-symbols-light:delete-sharp" size="23" style="color: #B3B7EE; cursor: pointer;" @click="" />
-      <Icon name="nrk:media-media-complete" size="20"
+      <Icon name="material-symbols:edit-outline" size="20" class="hover:bg-yellow-400"
+        style="color: #B3B7EE; cursor: pointer;" @click="" />
+      <Icon name="material-symbols-light:delete-sharp" class="hover:bg-red-400" size="23"
+        :style="{ color: '#B3B7EE', cursor: 'pointer' }" @click="" />
+      <Icon name="nrk:media-media-complete" size="20" class="hover:bg-green-400"
         :style="{ color: work?.completed ? 'green' : '#B3B7EE', cursor: 'pointer' }" @click="" />
     </div>
 
