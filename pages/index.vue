@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import MainLayout from '~/layouts/MainLayout.vue';
 
+console.log('index page')
+
 definePageMeta({
   layout: "main-layout",
 });
