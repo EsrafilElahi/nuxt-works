@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import MainLayout from '~/layouts/MainLayout.vue';
-
-
 definePageMeta({
   layout: "main-layout",
 });
@@ -36,11 +33,11 @@ const works = ref([
 </script>
 
 <template>
-  <MainLayout>
+  <div>
     <div class="flex flex-col gap-5">
       <WorkItem v-for="work in works" :work="work" :key="work.id" />
     </div>
 
     <AddWorkPlusIcon />
-  </MainLayout>
+  </div>
 </template>

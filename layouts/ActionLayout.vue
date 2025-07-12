@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { RouteLocationAsPath, RouteLocationAsPathGeneric } from 'vue-router';
+import type { RouteLocationNormalized } from 'vue-router';
 
 const props = defineProps(['title']);
 const router = useRouter();
-const route: RouteLocationAsPathGeneric = useRoute();
-
-console.log(route)
+const route: RouteLocationNormalized = useRoute();
 
 const handleBack = () => {
   router.back()
@@ -17,8 +15,7 @@ const handleBack = () => {
     <header class="w-full !flex justify-start gap-7 items-center bg-[#9395D3] !p-4">
       <Icon name="material-symbols:arrow-back-rounded" size="30" style="color: white; cursor: pointer;"
         @click="handleBack" />
-      <h2 class="!text-[20px] !font-bold text-white">{{ title
-        }}</h2>
+      <h2 class="!text-[20px] !font-bold text-white">{{ title || route?.meta?.title }}</h2>
     </header>
 
     <main class="w-full h-full bg-[#c5c8f4] px-2 py-5">

@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import ActionLayout from '~/layouts/ActionLayout.vue';
+// definePageMeta({
+//   layout: false, for disable default layout
+// });
+
+definePageMeta({
+  layout: "action-layout",
+  title: "Works", // Pass title via route meta
+});
 
 
 const works = ref([
@@ -32,11 +39,9 @@ const works = ref([
 </script>
 
 <template>
-  <ActionLayout title="Add Work">
-    <div>
-      <div class="flex flex-col gap-5">
-        <WorkItem v-for="work in works" :work="work" :key="work.id" />
-      </div>
+  <div>
+    <div class="flex flex-col gap-5">
+      <WorkItem v-for="work in works" :work="work" :key="work.id" />
     </div>
-  </ActionLayout>
+  </div>
 </template>
