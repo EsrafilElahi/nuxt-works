@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const openDelete = ref(false);
 const openComplete = ref(false);
+const router = useRouter();
 
 const props = defineProps(["work"]);
 const allWorks = JSON.parse(localStorage.getItem("allWorks") || "[]") || [];
@@ -30,6 +31,11 @@ const handleComplete = () => {
 
   openComplete.value = false;
 };
+
+const handlePushToEditWork = () => {
+  router.push(`/editWork/${props.work.id}`)
+}
+
 </script>
 
 <template>
@@ -49,7 +55,7 @@ const handleComplete = () => {
         size="20"
         class="hover:bg-yellow-400"
         style="color: #b3b7ee; cursor: pointer"
-        @click=""
+        @click="handlePushToEditWork"
       />
       <Icon
         name="material-symbols-light:delete-sharp"
