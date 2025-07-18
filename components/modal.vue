@@ -15,7 +15,7 @@ const emit = defineEmits(["onClose"]);
       <slot />
 
       <span
-        class="fixed left-2 top-2 cursor-pointer bg-amber-400 !p-1 !px-2 rounded"
+        class="absolute left-2 top-2 cursor-pointer bg-amber-400 !p-1 !px-2 rounded"
         @click="emit('onClose')"
         >X</span
       >
