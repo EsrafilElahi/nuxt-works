@@ -1,15 +1,34 @@
 <script setup lang="ts">
-const open = ref(false);
+const openDelete = ref(false);
+const openComplete = ref(false);
 
 const props = defineProps(["work"]);
-const allWorks = JSON.parse(localStorage.getItem("allWorks") || '[]') || [];
+const allWorks = JSON.parse(localStorage.getItem("allWorks") || "[]") || [];
 
 const handleDelete = () => {
-  const restAllWorks = allWorks?.filter((item: any) => item.id !== props.work.id);
+  const restAllWorks = allWorks?.filter(
+    (item: any) => item.id !== props.work.id
+  );
 
   localStorage.setItem("allWorks", JSON.stringify(restAllWorks, null, 2));
 
-  open.value = false;
+  openDelete.value = false;
+};
+
+const handleComplete = () => {
+  const foundWork = allWorks?.find((item: any) => item.id === props.work.id);
+  const restAllWorks = allWorks?.filter(
+    (item: any) => item.id !== props.work.id
+  );
+
+  foundWork.completed = !foundWork.completed;
+
+  localStorage.setItem(
+    "allWorks",
+    JSON.stringify([...restAllWorks, foundWork], null, 2)
+  );
+
+  openComplete.value = false;
 };
 </script>
 
@@ -37,7 +56,7 @@ const handleDelete = () => {
         class="hover:bg-red-400"
         size="23"
         :style="{ color: '#B3B7EE', cursor: 'pointer' }"
-        @click="open = true"
+        @click="openDelete = true"
       />
       <Icon
         name="nrk:media-media-complete"
@@ -47,11 +66,11 @@ const handleDelete = () => {
           color: work?.completed ? 'green' : '#B3B7EE',
           cursor: 'pointer',
         }"
-        @click=""
+        @click="openComplete = true"
       />
     </div>
 
-    <Modal :open="open" @onClose="open = false">
+    <Modal :open="openDelete" @onClose="openDelete = false">
       <div class="w-full flex justify-between items-center">
         <button
           class="!bg-green-300 !py-3 !px-10 rounded-xl"
@@ -61,7 +80,24 @@ const handleDelete = () => {
         </button>
         <button
           class="!bg-red-300 !py-3 !px-10 rounded-xl"
-          @click="open = false"
+          @click="openDelete = false"
+        >
+          no
+        </button>
+      </div>
+    </Modal>
+
+    <Modal :open="openComplete" @onClose="openComplete = false">
+      <div class="w-full flex justify-between items-center">
+        <button
+          class="!bg-green-300 !py-3 !px-10 rounded-xl"
+          @click="handleComplete"
+        >
+          yes
+        </button>
+        <button
+          class="!bg-red-300 !py-3 !px-10 rounded-xl"
+          @click="openComplete = false"
         >
           no
         </button>

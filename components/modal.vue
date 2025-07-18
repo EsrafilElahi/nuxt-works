@@ -6,7 +6,8 @@ const emit = defineEmits(["onClose"]);
 <template>
   <div
     v-show="open"
-    class="min-w-full min-h-full bg-[#0000003d] absolute left-0 top-0"
+    class="min-w-full min-h-full !p-10 bg-[#0000003d] absolute left-0 top-0 xxxxxxxxxxxxxxxxxxx"
+    @click.self="emit('onClose')"
   >
     <div
       class="flex justify-center items-center bg-white !min-w-[300px] min-h-[150px] rounded-lg relative !p-2"
