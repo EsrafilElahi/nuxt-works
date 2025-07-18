@@ -14,7 +14,7 @@ const handleSubmit = () => {
     completed: false,
   };
 
-  const allWorks = JSON.parse(localStorage.getItem("allWorks")) || [];
+  const allWorks = JSON.parse(localStorage.getItem("allWorks") || '[]') || [];
   const newAllWorks = [...allWorks, objWork];
 
   localStorage.setItem("allWorks", JSON.stringify(newAllWorks, null, 2));

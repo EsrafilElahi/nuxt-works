@@ -2,10 +2,10 @@
 const open = ref(false);
 
 const props = defineProps(["work"]);
-const allWorks = JSON.parse(localStorage.getItem("allWorks")) || [];
+const allWorks = JSON.parse(localStorage.getItem("allWorks") || '[]') || [];
 
 const handleDelete = () => {
-  const restAllWorks = allWorks?.filter((item) => item.id !== props.work.id);
+  const restAllWorks = allWorks?.filter((item: any) => item.id !== props.work.id);
 
   localStorage.setItem("allWorks", JSON.stringify(restAllWorks, null, 2));
 

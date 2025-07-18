@@ -1,6 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center flex-col min-w-[500px] max-w-[500px] w-full mx-auto relative">
-    <header class="w-full !flex justify-between items-center bg-[#9395D3] !p-4">
+  <div
+    class="min-h-screen flex items-center flex-col min-w-[500px] max-w-[500px] w-full mx-auto relative"
+  >
+    <header
+      class="w-[500px] z-10 !flex fixed top-0 justify-between items-center bg-[#9395D3] !p-4"
+    >
       <h2 class="!text-[20px] !font-bold text-white" v-uppercase>works app</h2>
 
       <div class="flex gap-2 items-center">
@@ -9,7 +13,7 @@
       </div>
     </header>
 
-    <main class="w-full h-full bg-[#c5c8f4] px-2 py-5">
+    <main class="w-full h-full bg-[#c5c8f4] px-2 py-5 mt-[62px]">
       <slot />
     </main>
   </div>

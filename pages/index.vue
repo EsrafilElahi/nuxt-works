@@ -3,7 +3,7 @@ definePageMeta({
   layout: "main-layout",
 });
 
-const allWorks = computed(() => JSON.parse(localStorage.getItem("allWorks")) || []);
+const allWorks = computed(() => JSON.parse(localStorage.getItem("allWorks") || '[]') || []);
 </script>
 
 <template>
